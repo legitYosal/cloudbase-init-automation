@@ -61,8 +61,6 @@ try {
     $service = Get-Service -Name "cloudbase-init" -ErrorAction SilentlyContinue
     if ($service) {
         Log-Message "Installation verified. Cloudbase-Init service: Name=$($service.Name), Status=$($service.Status), StartType=$($service.StartType)"
-        # Optional: Start the service if not running
-        # if ($service.Status -ne "Running") { Start-Service -Name "cloudbase-init" }
     } else {
         Log-Message "Verification failed: Service not found after installation."
         exit 1
